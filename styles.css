@@ -1,0 +1,108 @@
+
+body{
+    font-family: 'Roboto Mono', monospace;
+}
+.total-container{
+    padding: 0 5px;
+}
+.card{
+    min-width: 330px;
+    height: 100%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.table-responsive{
+    padding: 20px 20px 15px 20px;
+    margin: 0 5px;
+    font-size: 13px;
+    letter-spacing: -1px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.total-body .heading p{
+    padding: 0;
+    font-size: 15px;
+    font-weight: normal;
+}
+.total-body .data p{
+    font-size: 20px;
+}
+.total-body .delta p{
+    font-size: 20px;
+    opacity: 0.6;
+}
+/* 
+input[type="search"]{
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 0;
+} */
+td,th{
+    padding: 5px 5px !important;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+.state-table tbody .state-tr{
+    cursor: pointer;
+}
+.state-table tbody .state-tr:hover{
+    background-color: rgba(0,0,0,.075);
+}
+.chart-head{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.symptoms{
+    display: flex;
+    align-items: center;
+}
+.symptoms-container{
+    margin: 0 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.chart-container{
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px 10px;
+    margin: 0 5px;
+}
+#linechart{
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
+.news-container{
+    margin: 0 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.news-card{
+    height: 120px;
+    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19); */
+    display: flex;
+}
+.news-content{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.news-title{
+    font-weight: bold;
+    font-size: 12px;
+    overflow: hidden;
+}
+.news-source{
+    font-size: 11px;
+}
+.news-footer{
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 800px) {
+    
+  }

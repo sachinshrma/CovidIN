@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CovidIN</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand container" href="">
+      <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+      Covid-IN
+    </a>
+  </nav>
+  <div class="container">
+
+    <div class="row justify-content-between">
+      <!-- <div class="total-container mt-5 col-sm-6">
+        <canvas id="myChart" width="400" height="400"></canvas></div> -->
+      <div class="total-container mt-3 col-md">
+        <div class="card">
+
+          <div class=" total-body card-body">
+            <div class="card-title" style="font-size: 20px;">
+              Total Count<span class="lastupdatedtime text-muted float-right" style="font-size: 11px;">live</span>
+            </div>
+            <hr>
+            <div class="card-text heading row">
+              <p class="col text-center">Confirmed </p>
+              <p class="col text-center">Active</p>
+              <p class="col text-center">Deaths</p>
+              <p class="col text-center">Recovered</p>
+            </div>
+            <div class="card-text data row">
+              <p class="confirmed-count col text-center text-danger">--</p>
+              <p class="active-count col text-center text-warning">--</p>
+              <p class="deaths-count col text-center text-muted">--</p>
+              <p class="recovered-count col text-center text-success">--</p>
+            </div>
+            <div class="card-text delta row">
+              <p class="confirmed-delta col text-center text-danger">--</p>
+              <p class="active-delta col text-center text-warning">--</p>
+              <p class="deaths-delta col text-center text-muted">--</p>
+              <p class="recovered-delta col text-center text-success">--</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-container col-md mt-3">
+        <div class="chart-head" style="padding-left: 10px;">Covid-19 Trend in INDIA</div>
+        <hr>
+        <div id="linechart" class=""></div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="table-responsive  table-striped mt-3 col-md ">
+        <div class="chart-head">Statewise Covid-19 Cases</div>
+        <hr>
+        <table class="state-table">
+          <thead class="thead">
+            <tr>
+              <th scope="col text-left">State/UT</th>
+              <th scope="col text-right">C</th>
+              <th scope="col text-right">A</th>
+              <th scope="col text-right">D</th>
+              <th scope="col text-right">R</th>
+            </tr>
+          </thead>
+          <tbody class="state-table-body">
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md mt-3" style="padding-left: 0px;padding-right: 0px;">
+        <div class="symptoms-container">
+          <div style="font-size: 20px;">Symptoms of Covid-19</div>
+          <hr>
+          <div class="symptoms mb-3">
+            <div class=""><img src="assests/cough.png" alt="" width="50" height="50"></div>
+            <div class="ml-3" style="font-size: 15px;">Cough</div>
+          </div>
+          <div class="symptoms mb-3">
+            <div class=""><img src="assests/fever.png" alt="" width="50" height="50"></div>
+            <div class="ml-3" style="font-size: 15px;">Fever</div>
+          </div>
+          <div class="symptoms mb-3">
+            <div class=""><img src="assests/tiredness.png" alt="" width="50" height="50" style="border-radius: 30px;">
+            </div>
+            <div class="ml-3" style="font-size: 15px;">Tiredness</div>
+          </div>
+          <div class="symptoms mb-3">
+            <div class=""><img src="assests/breathing.png" alt="" width="50" height="50"></div>
+            <div class="ml-3" style="font-size: 15px;">Difficulty in Breathing</div>
+          </div>
+          <div style="font-size: 10px;" class="text-muted">If you have symptoms of COVID-19,
+            seek medical help immediately!
+          </div>
+
+
+
+
+
+
+        </div>
+        <div class="news-container mt-3">
+          <div style="font-size: 20px;margin: 0 5px; ">Top news
+            <span class="text-muted float-right" style="font-size: 10px;">powered by https://newsapi.org/</span>
+            <hr>
+          </div>
+          <div class="news-elements"></div>
+          <div class="news-footer">
+            <button class="btn btn-outline-dark btn-sm previous-btn">Previous</button>
+            <button class="btn btn-outline-dark btn-sm next-btn ml-1">Next</button>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <nav class="navbar justify-content-between navbar-dark text-white bg-secondary mt-5">
+    Developed by Sachin Sharma
+    <div>
+      <a href="https://github.com/sachinshrma" target="_blank" class="fa fa-github-square text-white"
+        style="font-size: 25px;" aria-hidden="true"></a>
+      <a href="https://www.linkedin.com/in/sachinshrma/" target="_blank" class="fa fa-linkedin-square text-white"
+        style="font-size: 25px;" aria-hidden="true"></a>
+    </div>
+  </nav>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
